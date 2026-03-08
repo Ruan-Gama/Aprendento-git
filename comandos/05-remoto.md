@@ -6,6 +6,17 @@
 git remote add origin https://github.com/usuario/repositorio.git
 # Conecta o repositório local a um remoto
 # "origin" é o apelido dado ao endereço remoto — é uma convenção universal
+
+git remote -v
+# Lista os repositórios remotos conectados e suas URLs
+# Útil para confirmar se o remote foi configurado corretamente
+
+git remote rename origin novo-nome
+# Renomeia o apelido de um remote
+
+git remote remove origin
+# Remove a conexão com o repositório remoto
+# (não apaga nada no GitHub, só desfaz o vínculo local)
 ```
 
 ---

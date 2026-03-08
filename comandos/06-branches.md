@@ -26,9 +26,13 @@ git checkout -b nome-da-branch
 
 git checkout nome-da-branch
 # Troca para uma branch já existente
+
+# Alternativa moderna (Git 2.23+):
+git switch nome-da-branch        # troca para uma branch existente
+git switch -c nome-da-branch     # cria e troca para uma nova branch
 ```
 
-> 💡 Versões mais recentes do Git têm o `git switch` como alternativa mais clara ao `git checkout` para trocar de branch.
+> 💡 `git switch` foi criado para substituir o `git checkout` na função de trocar de branch, deixando o comando com uma responsabilidade só. Prefira `switch` em projetos novos.
 
 ---
 
@@ -71,6 +75,31 @@ git diff branch-1 branch-2
 git branch -d nome-da-branch
 # Deleta a branch (só funciona se ela já foi mesclada)
 # Use -D para forçar a exclusão mesmo sem merge
+```
+
+---
+
+## Rebase
+
+```bash
+# Estando na branch feature:
+git rebase main
+# Reaplica os commits da branch atual em cima do último commit do main
+# Resultado: histórico linear, sem commits de merge
+
+# ⚠️ Nunca faça rebase de uma branch que já foi enviada ao remoto
+# e que outras pessoas estão usando — isso reescreve o histórico
+```
+
+---
+
+## Cherry-pick
+
+```bash
+git cherry-pick <hash>
+# Aplica um commit específico de qualquer branch na branch atual
+# Útil quando você quer trazer apenas uma alteração pontual,
+# sem fazer o merge da branch inteira
 ```
 
 ---

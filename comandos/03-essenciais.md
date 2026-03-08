@@ -18,6 +18,31 @@ git status
 
 git log
 # Exibe o histórico completo de commits (autor, data, mensagem e hash)
+
+git log --oneline
+# Versão resumida do log — uma linha por commit, mais fácil de ler
+
+git log --oneline --graph
+# Mostra o histórico em forma de árvore, ótimo para visualizar branches
+
+git show <hash>
+# Mostra o conteúdo detalhado de um commit específico:
+# quais arquivos foram alterados e o que mudou em cada um
+```
+
+---
+
+## Comparando Alterações
+
+```bash
+git diff
+# Mostra o que foi alterado nos arquivos mas ainda NÃO foi para o stage
+
+git diff --staged
+# Mostra o que está no stage e será incluído no próximo commit
+
+git diff <hash1> <hash2>
+# Compara dois commits específicos
 ```
 
 ---

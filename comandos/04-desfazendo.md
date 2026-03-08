@@ -1,5 +1,18 @@
 # ↩️ Desfazendo Alterações
 
+## Revertendo um Commit Sem Reescrever o Histórico
+
+```bash
+git revert <hash>
+# Cria um NOVO commit que desfaz as alterações do commit indicado
+# O histórico original é preservado — nada é apagado
+# ✅ Seguro para usar em branches compartilhadas e já enviadas ao remoto
+```
+
+> 💡 **`revert` vs `reset`**: use `revert` quando o commit já foi enviado ao remoto ou quando outras pessoas trabalham no mesmo repositório. Use `reset` apenas em commits locais que ainda não foram compartilhados.
+
+---
+
 ## Removendo do Stage
 
 ```bash

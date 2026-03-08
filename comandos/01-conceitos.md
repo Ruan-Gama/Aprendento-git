@@ -46,6 +46,38 @@ Branches são úteis para:
 
 ---
 
+### 🎯 HEAD
+`HEAD` é um **ponteiro que indica em qual commit você está agora**. Normalmente aponta para o último commit da branch atual. Quando você faz um novo commit, o HEAD avança automaticamente.
+
+Você verá o HEAD mencionado em vários comandos como referência ao "estado atual" do repositório.
+
+---
+
+### 🔀 Merge vs Rebase
+
+Ambos servem para integrar o trabalho de uma branch em outra, mas de formas diferentes:
+
+**Merge** — junta os históricos preservando exatamente como aconteceram:
+```
+main:    A ── B ──────── M  (commit de merge)
+                \       /
+feature:         C ── D
+```
+
+**Rebase** — reaplica os commits de uma branch *em cima* da outra, resultando em um histórico linear:
+```
+main:    A ── B ── C' ── D'
+```
+
+> 💡 Use **merge** para integrar branches de feature ao main. Use **rebase** para manter sua branch atualizada com o main de forma limpa. Evite rebase em branches compartilhadas com outras pessoas.
+
+---
+
+### ⚡ Fast-forward
+Quando você faz um merge e a branch principal não teve nenhum commit novo desde que a feature foi criada, o Git simplesmente **move o ponteiro para frente** sem criar um commit de merge. Isso se chama *fast-forward* e resulta em um histórico mais limpo.
+
+---
+
 ### 📁 Arquivos Especiais
 
 | Arquivo | Descrição |
